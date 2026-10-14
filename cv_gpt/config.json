@@ -1,0 +1,75 @@
+{
+  "hardware": {
+    "confirmed": false,
+    "driver": "L298N",
+    "left": {"in1": 4, "in2": 17, "pwm": 23, "invert": false},
+    "right": {"in1": 27, "in2": 22, "pwm": 24, "invert": false},
+    "standby_pin": null,
+    "pwm_hz": 100,
+    "max_duty": 0.65,
+    "left_speed_duty": [[0.0, 0.0], [0.04, 0.30], [0.10, 0.42], [0.18, 0.60]],
+    "right_speed_duty": [[0.0, 0.0], [0.04, 0.30], [0.10, 0.42], [0.18, 0.60]]
+  },
+  "geometry": {
+    "chassis_width_m": 0.20,
+    "chassis_length_m": 0.25,
+    "wheel_track_m": null,
+    "preview_wheel_track_m": 0.16
+  },
+  "camera": {
+    "device": 0,
+    "width": 640,
+    "height": 480,
+    "fps": 30,
+    "fourcc": "MJPG",
+    "flip_horizontal": false,
+    "flip_vertical": false,
+    "max_frame_age_s": 0.25,
+    "startup_timeout_s": 5.0
+  },
+  "vision": {
+    "line_color": "black",
+    "threshold_mode": "otsu",
+    "fixed_threshold": 100,
+    "adaptive_block_size": 61,
+    "adaptive_c": 7,
+    "roi_top": 0.30,
+    "bands_y": [0.90, 0.78, 0.66, 0.54, 0.42],
+    "band_half_height_px": 4,
+    "min_line_width_px": 4,
+    "max_line_width_fraction": 0.24,
+    "max_band_step_fraction": 0.26,
+    "min_valid_bands": 3,
+    "min_nearest_y": 0.66,
+    "min_contrast": 25,
+    "min_confidence": 0.55,
+    "center_reference_fraction": 0.50,
+    "near_weight": 0.35,
+    "heading_weight": 0.65
+  },
+  "control": {
+    "base_speed_mps": 0.10,
+    "min_speed_mps": 0.04,
+    "max_wheel_speed_mps": 0.18,
+    "kp_curvature": 12.0,
+    "kd_curvature": 0.35,
+    "derivative_filter_tau_s": 0.10,
+    "max_curvature_per_m": 14.0,
+    "max_yaw_rate_radps": 0.85,
+    "curve_slowdown": 0.10,
+    "wheel_accel_mps2": 0.35,
+    "acquire_frames": 4,
+    "persistent_error_threshold": 0.85,
+    "persistent_error_timeout_s": 2.0,
+    "command_watchdog_s": 0.30
+  },
+  "recovery": {
+    "enabled": true,
+    "brake_s": 0.20,
+    "search_leg_s": 1.0,
+    "search_yaw_rate_radps": 0.55,
+    "timeout_s": 4.0,
+    "max_attempts": 3,
+    "attempt_window_s": 20.0
+  }
+}
